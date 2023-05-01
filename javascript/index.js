@@ -25,10 +25,69 @@
   //   document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
   // }, (error) => console.log(error));
 
-
+ 
 
 // Iteration 1 - using callbacks
 // ...
+getInstruction(
+  "mashedPotatoes",
+  0,
+  (response) => {
+    document.querySelector(
+      "#mashedPotatoes"
+    ).innerHTML += `<li>${response}</li>`;
+
+    getInstruction("mashedPotatoes",
+      1,
+      (response) => {
+        document.querySelector(
+          "#mashedPotatoes"
+        ).innerHTML += `<li>${response}</li>`;
+        getInstruction("mashedPotatoes",
+          2,
+          (response) => {
+            document.querySelector(
+              "#mashedPotatoes"
+            ).innerHTML += `<li>${response}</li>`;
+
+            getInstruction("mashedPotatoes",
+              3,
+              (response) => {
+                document.querySelector(
+                  "#mashedPotatoes"
+                ).innerHTML += `<li>${response}</li>`;
+
+                getInstruction("mashedPotatoes",
+                  4,
+                  (response) => {
+                    document.querySelector(
+                      "#mashedPotatoes"
+                    ).innerHTML += `<li>${response}</li>`;
+                  },
+                  (errorMessage) => {
+                    console.log(errorMessage);
+                  }
+                );
+              },
+              (errorMessage) => {
+                console.log(errorMessage);
+              }
+            );
+          },
+          (errorMessage) => {
+            console.log(errorMessage);
+          }
+        );
+      },
+      (errorMessage) => {
+        console.log(errorMessage);
+      }
+    );
+  },
+  (errorMessage) => {
+    console.log(errorMessage);
+  }
+);
 
 // Iteration 2 - using promises
 // ...
