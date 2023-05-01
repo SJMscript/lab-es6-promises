@@ -4,11 +4,11 @@
 // 🚨🚨🚨 Comment out the below code before you start working on the code
 
 // Out of sync
-  getInstruction("mashedPotatoes", 0, (step1) => {
+/* getInstruction("mashedPotatoes", 0, (step1) => {
     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
   }, (error) => console.log(error));
   
-  getInstruction("mashedPotatoes", 1, (step2) => {
+ /*  getInstruction("mashedPotatoes", 1, (step2) => {
     document.querySelector("#mashedPotatoes").innerHTML += `<li>${step2}</li>`;
   }, (error) => console.log(error));
   
@@ -25,10 +25,69 @@
     document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
   }, (error) => console.log(error));
 
-
+ */
 
 // Iteration 1 - using callbacks
 // ...
+getInstruction(
+  "mashedPotatoes",
+  0,
+  (response) => {
+    document.querySelector(
+      "#mashedPotatoes"
+    ).innerHTML += `<li>${response}</li>`;
+
+    getInstruction("mashedPotatoes",
+      1,
+      (response) => {
+        document.querySelector(
+          "#mashedPotatoes"
+        ).innerHTML += `<li>${response}</li>`;
+        getInstruction("mashedPotatoes",
+          2,
+          (response) => {
+            document.querySelector(
+              "#mashedPotatoes"
+            ).innerHTML += `<li>${response}</li>`;
+
+            getInstruction("mashedPotatoes",
+              3,
+              (response) => {
+                document.querySelector(
+                  "#mashedPotatoes"
+                ).innerHTML += `<li>${response}</li>`;
+
+                getInstruction("mashedPotatoes",
+                  4,
+                  (response) => {
+                    document.querySelector(
+                      "#mashedPotatoes"
+                    ).innerHTML += `<li>${response}</li>`;
+                  },
+                  (errorMessage) => {
+                    console.log(errorMessage);
+                  }
+                );
+              },
+              (errorMessage) => {
+                console.log(errorMessage);
+              }
+            );
+          },
+          (errorMessage) => {
+            console.log(errorMessage);
+          }
+        );
+      },
+      (errorMessage) => {
+        console.log(errorMessage);
+      }
+    );
+  },
+  (errorMessage) => {
+    console.log(errorMessage);
+  }
+);
 
 // Iteration 2 - using promises
 // ...
