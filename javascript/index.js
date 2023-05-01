@@ -64,14 +64,14 @@ getInstruction(
                       "#mashedPotatoes"
                     ).innerHTML += `<li>${response}</li>`;
                   },
-                  /* getInstruction("mashedPotatoes", 5, (response)=>{
+                  getInstruction("mashedPotatoes", 5, (response)=>{
                     document.querySelector(
                       "#mashedPotatoes"
-                    ).innerHTML += `<li>Mashed potatoes are ready!</li>`;
-                  }), */
-                 /*  (errorMessage) => {
+                    ).innerHTML +=  `<li>${response}</li>`;
+                  }), 
+                  (errorMessage) => {
                     console.log(errorMessage);
-                  } */
+                  } 
                 );
               },
               (errorMessage) => {
@@ -161,7 +161,9 @@ async function makeBroccoli(){
 
     const step7 = await obtainInstruction("broccoli", 6);
     document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`
+    const step8 = await obtainInstruction("broccoli", 7);
 
+    document.querySelector("#broccoli").innerHTML += `<li>${step8}</li>`
   } catch(error) {
 
   }
