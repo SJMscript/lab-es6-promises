@@ -8,7 +8,7 @@ function getInstruction(food, step, callback, errorCallback) {
       let instruction;
 
       if (food === "mashedPotatoes") {
-        instruction = mashedPotatoes[step];
+        instruction = mashedPotatoes[step];    
       }
       else if (food === "steak") {
         instruction = steak[step];

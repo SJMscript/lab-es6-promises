@@ -184,5 +184,6 @@ Promise.allSettled([
   obtainInstruction("brusselsSprouts", 7), //document.querySelector("#brusselsSprouts").innerHTML += `<li>${step8}</li>`
 ])
 .then((allResponses) =>{
-  document.querySelector("#brusselsSprouts").innerHTML += `<li>${step1}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${allResponses}</li>`
+  console.log(allResponses)
 })
